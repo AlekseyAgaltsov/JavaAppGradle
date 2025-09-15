@@ -9,6 +9,13 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven {
+        url = uri("http://localhost:8081/repository/maven-snapshots/") // URL вашего Nexus репозитория
+        credentials {
+            username = project.findProperty('user')
+            password = project.findProperty('')
+        }
+    }
 }
 
 dependencies {
